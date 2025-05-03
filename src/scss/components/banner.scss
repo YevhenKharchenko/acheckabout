@@ -1,0 +1,110 @@
+.cookie-banner-section {
+  background-color: #fff;
+  width: 100%;
+  max-width: 335px;
+  border: 1px solid #270137;
+  box-shadow: 0 14px 42px 0 rgba(8, 15, 52, 0.06);
+  border-radius: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: none;
+
+  @include media(desktop) {
+    max-width: 1272px;
+    padding: 52px 117px 52px 138px;
+    justify-content: space-between;
+  }
+}
+
+.cookie-close-btn {
+  position: absolute;
+  top: 26px;
+  right: 28px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 14px;
+  height: 14px;
+
+  @include media(desktop) {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 48px;
+  }
+}
+
+.cookie-close-icon {
+  stroke: #180f29;
+  width: 14px;
+  height: 14px;
+}
+
+.cookie-banner-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.875;
+  color: #270137;
+  padding: 47px 41px 37px 37px;
+
+  @include media(desktop) {
+    font-size: 18px;
+    line-height: 1.66667;
+    max-width: 648px;
+    padding: 0px 0px 0px 0px;
+  }
+}
+
+.cookie-optional-text {
+  display: none;
+
+  @include media(desktop) {
+    display: inline;
+  }
+}
+
+.cookie-banner-buttons {
+  padding: 0 20px 20px 15px;
+  display: flex;
+  justify-content: space-between;
+
+  @include media(desktop) {
+    border-top: none;
+    padding: 0px 0px 0px 0px;
+    gap: 20px;
+    flex-direction: row-reverse;
+  }
+}
+
+.cookie-accept-btn {
+  border-radius: 56px;
+  padding: 18px 24px;
+  box-shadow: 0 3px 12px 0 rgba(74, 58, 255, 0.18);
+  background: #00a5fe;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.125;
+  color: $_white_text_color;
+}
+
+.cookie-decline-btn {
+  border: 1px solid #eff0f6;
+  border-radius: 56px;
+  padding: 18px 26px;
+  box-shadow: 0 4px 8px 0 rgba(74, 58, 255, 0.08);
+  background: transparent;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.125;
+  color: #270137;
+}
+
+.show-cookie-banner {
+  display: block;
+
+  @include media(desktop) {
+    display: flex;
+  }
+}

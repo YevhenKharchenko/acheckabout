@@ -1,0 +1,107 @@
+.about-section {
+  padding-top: 28px;
+  padding-bottom: 74px;
+  scroll-margin-top: 60px;
+  box-shadow: inset 0 0 44px 12px #019df1;
+  background-image: url(../img/privacy/privacy-bg-desk.png),
+    linear-gradient(180deg, #caf2ff 0%, #66c7f8 50%, #019df1 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include media(desktop) {
+    scroll-margin-top: 70px;
+    padding-bottom: 112px;
+  }
+}
+
+.about-container {
+  @include media(desktop) {
+    padding-left: 136px;
+    padding-right: 136px;
+  }
+}
+
+.about-title {
+  margin-bottom: 14px;
+}
+
+.about-secondary-title {
+  font-family: 'Fredoka One', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.63636;
+  text-align: center;
+  color: #260036;
+  margin-bottom: 22px;
+
+  @include media(desktop) {
+    margin-bottom: 34px;
+  }
+}
+
+.about-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 2;
+  text-align: center;
+  color: #260036;
+  margin-bottom: 18px;
+
+  @include media(desktop) {
+    margin-bottom: 54px;
+  }
+}
+
+.about-list {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include media(desktop) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 35px 12px;
+    margin-bottom: 70px;
+  }
+}
+
+.about-list-item {
+  @include media(desktop) {
+    max-width: 578px;
+  }
+}
+
+.about-list-item-title {
+  font-family: 'Fredoka One', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 6px;
+
+  @include media(desktop) {
+    text-align: left;
+  }
+}
+
+.about-list-item-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.44444;
+  text-align: center;
+
+  @include media(desktop) {
+    text-align: left;
+  }
+}
+
+.about-bottom-text {
+  font-family: 'Fredoka One', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.63636;
+  text-align: center;
+  color: #260036;
+}

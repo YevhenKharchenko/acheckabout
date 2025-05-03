@@ -1,0 +1,80 @@
+.header {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #000;
+  z-index: 10;
+
+  @include media(desktop) {
+    padding-bottom: 14px;
+  }
+}
+
+.header-container {
+  @include media(desktop) {
+    padding: 0 181px;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media(desktop) {
+  }
+}
+
+.header-logo-icon {
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.nav-list {
+  display: none;
+
+  @include media(desktop) {
+    display: flex;
+    gap: 48px;
+  }
+}
+
+.nav-list-link {
+  font-family: 'Fredoka One', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: $_white_text_color;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+
+  &:hover,
+  &.active {
+  }
+}
+
+.nav-list-link.active {
+}
+
+.nav-btn {
+  background-color: transparent;
+  width: 28px;
+  height: 28px;
+
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.close-btn {
+  display: none;
+  background-color: transparent;
+  width: 28px;
+  height: 28px;
+
+  @include media(desktop) {
+    display: none;
+  }
+}

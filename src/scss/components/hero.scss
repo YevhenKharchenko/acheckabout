@@ -1,0 +1,98 @@
+.hero-section {
+  padding-top: 80px;
+  background-image: url(../img/hero/hero-tablet-mob.png),
+    url(../img/hero/hero-bg-mob.jpg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center bottom, center;
+  background-size: 375px 386px, cover;
+  scroll-margin-top: 60px;
+
+  @include media(desktop) {
+    background-image: url(../img/hero/hero-bg-desk.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    scroll-margin-top: 60px;
+  }
+}
+
+.hero-background-wrapper {
+  padding-bottom: 365px;
+
+  @include media(desktop) {
+    padding-top: 98px;
+    padding-bottom: 108px;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../img/hero/hero-tablet-desk.png);
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    background-size: 960px 728px;
+  }
+}
+
+.hero-container {
+  padding-left: 18px;
+  padding-right: 18px;
+
+  @include media(desktop) {
+    padding-left: 120px;
+  }
+}
+
+.hero-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media(desktop) {
+    max-width: 512px;
+  }
+}
+
+.hero-img {
+  margin-bottom: 0px;
+}
+
+.hero-title {
+  font-family: 'Fredoka One', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  text-align: center;
+  color: $_white_text_color;
+  margin-bottom: 18px;
+
+  @include media(desktop) {
+    font-size: 24px;
+    line-height: 1.33333;
+  }
+}
+
+.hero-text {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.44444;
+  text-align: center;
+  color: $_white_text_color;
+  margin-bottom: 22px;
+}
+
+.hero-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  @include media(desktop) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

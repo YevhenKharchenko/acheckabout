@@ -1,0 +1,56 @@
+.policy-section {
+  padding-top: 76px;
+  background-color: #bcebfe;
+  padding-top: 140px;
+  padding-bottom: 40px;
+  background-image: url(../img/privacy/privacy-bg-desk.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.policy-container {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include media(desktop) {
+    padding-left: 86px;
+    padding-right: 86px;
+  }
+}
+
+.policy-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+  color: $_main_color;
+  margin-bottom: 30px;
+}
+
+.policy-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+  color: $_main_color;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.policy-link {
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.empty-row::after {
+  content: '';
+  display: block;
+  height: 1em;
+}
+
+.support-link {
+  word-wrap: break-word;
+}
