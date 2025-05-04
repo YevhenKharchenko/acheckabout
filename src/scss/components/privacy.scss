@@ -3,6 +3,8 @@
   padding-bottom: 50px;
 
   @include media(desktop) {
+    padding-top: 116px;
+    padding-bottom: 110px;
   }
 }
 
@@ -10,6 +12,11 @@
   display: grid;
   grid-template-rows: repeat(1, 1fr);
   gap: 1em;
+
+  @include media(desktop) {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
 }
 
 .policy-title {
@@ -21,6 +28,7 @@
   word-break: break-word;
 
   @include media(desktop) {
+    font-size: 44px;
   }
 }
 
@@ -31,6 +39,7 @@
   color: #373330;
 
   @include media(desktop) {
+    font-size: 22px;
   }
 }
 
@@ -42,7 +51,7 @@
   word-break: break-word;
 
   @include media(desktop) {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 
@@ -63,6 +72,7 @@
   word-break: break-word;
 
   @include media(desktop) {
+    font-size: 22px;
   }
 }
 
@@ -71,4 +81,8 @@
   font-size: 18px;
   text-decoration-skip-ink: none;
   word-break: break-word;
+
+  @include media(desktop) {
+    font-size: 22px;
+  }
 }
