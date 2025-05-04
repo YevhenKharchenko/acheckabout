@@ -1,56 +1,74 @@
 .policy-section {
-  padding-top: 76px;
-  background-color: #bcebfe;
-  padding-top: 140px;
-  padding-bottom: 40px;
-  background-image: url(../img/privacy/privacy-bg-desk.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  padding-top: 111px;
+  padding-bottom: 50px;
+
+  @include media(desktop) {
+  }
 }
 
 .policy-container {
-  padding-left: 20px;
-  padding-right: 20px;
-
-  @include media(desktop) {
-    padding-left: 86px;
-    padding-right: 86px;
-  }
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  gap: 1em;
 }
 
 .policy-title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.3;
-  color: $_main_color;
-  margin-bottom: 30px;
-}
-
-.policy-text {
+  font-family: 'Cinzel', sans-serif;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 1.3;
-  color: $_main_color;
+  font-size: 24px;
+  color: #373330;
+  text-align: center;
+  word-break: break-word;
 
-  &:not(:last-child) {
-    margin-bottom: 30px;
+  @include media(desktop) {
   }
 }
 
-.policy-link {
-  font-weight: 400;
+.policy-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
   font-size: 18px;
-  text-decoration: underline;
+  color: #373330;
+
+  @include media(desktop) {
+  }
+}
+
+.policy-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #373330;
+  word-break: break-word;
+
+  @include media(desktop) {
+    font-size: 28px;
+  }
+}
+
+.policy-list {
+  list-style-type: disc;
+  padding-left: 30px;
+}
+
+.policy-span {
+  font-weight: 500;
+}
+
+.policy-link {
+  font-weight: 300;
+  font-size: 18px;
   text-decoration-skip-ink: none;
+  text-decoration: underline;
+  word-break: break-word;
+
+  @include media(desktop) {
+  }
 }
 
-.empty-row::after {
-  content: '';
-  display: block;
-  height: 1em;
-}
-
-.support-link {
-  word-wrap: break-word;
+.policy-support-link {
+  font-weight: 300;
+  font-size: 18px;
+  text-decoration-skip-ink: none;
+  word-break: break-word;
 }

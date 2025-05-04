@@ -1,7 +1,7 @@
 .context-menu {
   display: none;
   background: #000;
-  padding: 49px 0px 70px 61px;
+  padding: 23px 39px;
   max-width: 375px;
   width: 100%;
   margin-right: auto;
@@ -16,19 +16,18 @@
 .context-nav-list {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 26px;
   text-align: left;
 }
 
 .context-list-link {
-  font-family: 'Fredoka One', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  color: #260036;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #fff;
   transition: all 0.3s ease-in-out;
 
   &:active {
-    color: $_white_text_color;
   }
 }
 
