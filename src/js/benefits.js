@@ -5,17 +5,17 @@ import { observeSwiperAutoplay } from './observer.js';
 
 Swiper.use([Autoplay]);
 
-const benefitsSwiperEl = document.querySelector('.benefits-swiper-container');
+const servicesSwiperEl = document.querySelector('.services-swiper-container');
 
-let benefitsSwiper;
+let servicesSwiper;
 
-benefitsSwiper = new Swiper('.benefits-swiper-container', {
+servicesSwiper = new Swiper('.services-swiper-container', {
   direction: 'horizontal',
   loop: true,
   grabCursor: true,
   slidesPerView: 1,
   initialSlide: 0,
-  spaceBetween: 40,
+  spaceBetween: 25,
   grabCursor: true,
   allowTouchMove: true,
   speed: 500,
@@ -33,10 +33,10 @@ benefitsSwiper = new Swiper('.benefits-swiper-container', {
   on: {
     init: () => {
       document
-        .querySelector('.benefits-swiper-container')
+        .querySelector('.services-swiper-container')
         .classList.add('show');
     },
   },
 });
 
-observeSwiperAutoplay(benefitsSwiper, benefitsSwiperEl);
+observeSwiperAutoplay(servicesSwiper, servicesSwiperEl);
