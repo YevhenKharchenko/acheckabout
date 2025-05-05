@@ -1,0 +1,19 @@
+.contacts-section {
+  padding-top: 25px;
+  padding-bottom: 50px;
+  scroll-margin-top: 60px;
+
+  @include media(desktop) {
+    padding-top: 55px;
+    padding-bottom: 110px;
+    scroll-margin-top: 70px;
+  }
+}
+
+.contacts-container {
+  @include media(desktop) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
