@@ -39,6 +39,7 @@
   display: none;
 
   @include media(desktop) {
+    height: 50px;
     position: absolute;
     top: 23px;
     left: 72px;
