@@ -35,6 +35,13 @@
 
   @include media(desktop) {
     padding: 16px 0;
+    justify-content: start;
+  }
+}
+
+.prices-first-column {
+  @include media(desktop) {
+    width: 990px;
   }
 }
 
@@ -48,7 +55,8 @@
 
   @include media(desktop) {
     font-size: 24px;
-    max-width: fit-content;
+    max-width: 856px;
+    text-align: left;
   }
 }
 
@@ -61,6 +69,7 @@
 
   @include media(desktop) {
     padding: 24px 0;
+    justify-content: start;
   }
 }
 
@@ -73,7 +82,8 @@
 
   @include media(desktop) {
     font-size: 22px;
-    max-width: fit-content;
+    max-width: 856px;
+    text-align: left;
   }
 }
 
