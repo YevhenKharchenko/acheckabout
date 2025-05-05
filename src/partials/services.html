@@ -2,6 +2,26 @@
   <div class="services-section-wrapper">
     <div class="container services-container">
       <h2 class="section-title services-title">Cosa Facciamo</h2>
+      <div class="controls">
+        <button
+          class="arrow-btn"
+          id="servicesLeftArrow"
+          aria-label="Previous slide"
+        >
+          <svg class="arrow-icon left-arrow-icon" width="60" height="60">
+            <use href="./img/sprite.svg#icon-arrow"></use>
+          </svg>
+        </button>
+        <button
+          class="arrow-btn"
+          id="servicesRightArrow"
+          aria-label="Next slide"
+        >
+          <svg class="arrow-icon" width="60" height="60">
+            <use href="./img/sprite.svg#icon-arrow"></use>
+          </svg>
+        </button>
+      </div>
       <div class="services-swiper-container">
         <ul class="swiper-wrapper services-swiper-wrapper">
           <li class="swiper-slide services-slide">
@@ -78,6 +98,13 @@
             </div>
           </li>
         </ul>
+      </div>
+      <div class="dots">
+        <div class="services-dot active"></div>
+        <div class="services-dot"></div>
+        <div class="services-dot"></div>
+        <div class="services-dot"></div>
+        <div class="services-dot"></div>
       </div>
     </div>
   </div>
