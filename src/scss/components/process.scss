@@ -40,6 +40,22 @@
   }
 }
 
+.process-span-mob {
+  display: block;
+
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.process-span-desk {
+  display: none;
+
+  @include media(desktop) {
+    display: block;
+  }
+}
+
 .process-desktop-content-wrapper {
   @include media(desktop) {
     display: flex;
@@ -155,19 +171,6 @@
     margin-top: 0;
     width: 325px;
     padding-left: 0;
-  }
-}
-
-.dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-  padding-bottom: 2px;
-
-  @include media(desktop) {
-    display: none;
   }
 }
 

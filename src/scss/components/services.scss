@@ -39,7 +39,6 @@
   display: none;
 
   @include media(desktop) {
-    height: 50px;
     position: absolute;
     top: 23px;
     left: 72px;
@@ -52,22 +51,30 @@
 }
 
 .arrow-btn {
-  transition: transform 0.3s ease-in-out;
-  background: none;
-  border: none;
-  cursor: pointer;
   display: none;
 
-  &:hover {
-    transform: scale(1.2);
-  }
-
-  &[disabled] {
-    opacity: 0.5;
-    cursor: not-allowed;
+  @include media(desktop) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    background: none;
+    border: none;
+    cursor: pointer;
 
     &:hover {
-      transform: none;
+      border: 1px solid #373330;
+      border-radius: 100%;
+      transform: scale(1.1);
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      &:hover {
+        transform: none;
+      }
     }
   }
 }

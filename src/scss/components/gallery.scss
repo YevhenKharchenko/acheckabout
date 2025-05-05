@@ -60,22 +60,6 @@
   }
 }
 
-.gallery-img {
-}
-
-.dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-  padding-bottom: 2px;
-
-  @include media(desktop) {
-    display: none;
-  }
-}
-
 .gallery-dot {
   width: 4px;
   height: 4px;
