@@ -34,8 +34,8 @@
 
   @include media(desktop) {
     flex-direction: row;
-    gap: 0;
     justify-content: space-between;
+    gap: 0;
   }
 }
 
@@ -46,6 +46,11 @@
 
   @include media(desktop) {
     gap: 16px;
+    width: 416px;
+
+    &:last-child {
+      width: 264px;
+    }
   }
 }
 

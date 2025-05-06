@@ -1,9 +1,9 @@
 import Swiper from 'swiper';
-// import { Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css/bundle';
-// import { observeSwiperAutoplay } from './observer.js';
+import { observeSwiperAutoplay } from './observer.js';
 
-// Swiper.use([Autoplay]);
+Swiper.use([Autoplay]);
 
 const reviewsSwiperEl = document.querySelector('.reviews-swiper-container');
 const reviewsDots = document.querySelectorAll('.reviews-dot');
@@ -14,7 +14,7 @@ let reviewsSwiper;
 
 reviewsSwiper = new Swiper('.reviews-swiper-container', {
   direction: 'horizontal',
-  // loop: true,
+  loop: true,
   grabCursor: true,
   slidesPerView: 1,
   initialSlide: 0,
@@ -28,7 +28,7 @@ reviewsSwiper = new Swiper('.reviews-swiper-container', {
   },
   breakpoints: {
     1440: {
-      // loop: false,
+      loop: false,
       spaceBetween: 14,
       initialSlide: 0,
       slidesPerView: 3,
@@ -38,12 +38,14 @@ reviewsSwiper = new Swiper('.reviews-swiper-container', {
     init: () => {
       document.querySelector('.reviews-swiper-container').classList.add('show');
     },
-    slideChange: () => {
-      updateReviewsDots(reviewsSwiper.realIndex);
-      updateReviewsArrows();
+    slideChange: function () {
+      updateReviewsDots(this.realIndex);
+      updateReviewsArrows(this);
     },
   },
 });
+
+updateReviewsArrows(reviewsSwiper);
 
 function updateReviewsDots(index) {
   reviewsDots.forEach((dot, i) => {
@@ -51,12 +53,10 @@ function updateReviewsDots(index) {
   });
 }
 
-function updateReviewsArrows() {
-  reviewsLeftArrow.disabled = reviewsSwiper.isBeginning;
-  reviewsRightArrow.disabled = reviewsSwiper.isEnd;
+function updateReviewsArrows(swiper) {
+  reviewsLeftArrow.disabled = swiper.isBeginning;
+  reviewsRightArrow.disabled = swiper.isEnd;
 }
-
-updateReviewsArrows();
 
 reviewsDots.forEach((dot, index) => {
   dot.addEventListener('click', () => {
@@ -72,4 +72,4 @@ reviewsRightArrow.addEventListener('click', () => {
   reviewsSwiper.slideNext();
 });
 
-// observeSwiperAutoplay(reviewsSwiper, reviewsSwiperEl);
+observeSwiperAutoplay(reviewsSwiper, reviewsSwiperEl);

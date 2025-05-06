@@ -1,9 +1,9 @@
 import Swiper from 'swiper';
-// import { Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css/bundle';
-// import { observeSwiperAutoplay } from './observer.js';
+import { observeSwiperAutoplay } from './observer.js';
 
-// Swiper.use([Autoplay]);
+Swiper.use([Autoplay]);
 
 const servicesSwiperEl = document.querySelector('.services-swiper-container');
 const servicesDots = document.querySelectorAll('.services-dot');
@@ -14,7 +14,7 @@ let servicesSwiper;
 
 servicesSwiper = new Swiper('.services-swiper-container', {
   direction: 'horizontal',
-  // loop: true,
+  loop: true,
   grabCursor: true,
   slidesPerView: 1,
   initialSlide: 0,
@@ -28,7 +28,7 @@ servicesSwiper = new Swiper('.services-swiper-container', {
   },
   breakpoints: {
     1440: {
-      // loop: false,
+      loop: false,
       spaceBetween: 24,
       initialSlide: 0,
       slidesPerView: 3,
@@ -40,12 +40,14 @@ servicesSwiper = new Swiper('.services-swiper-container', {
         .querySelector('.services-swiper-container')
         .classList.add('show');
     },
-    slideChange: () => {
-      updateServicesDots(servicesSwiper.realIndex);
-      updateServicesArrows();
+    slideChange: function () {
+      updateServicesDots(this.realIndex);
+      updateServicesArrows(this);
     },
   },
 });
+
+updateServicesArrows(servicesSwiper);
 
 function updateServicesDots(index) {
   servicesDots.forEach((dot, i) => {
@@ -53,12 +55,10 @@ function updateServicesDots(index) {
   });
 }
 
-function updateServicesArrows() {
-  servicesLeftArrow.disabled = servicesSwiper.isBeginning;
-  servicesRightArrow.disabled = servicesSwiper.isEnd;
+function updateServicesArrows(swiper) {
+  servicesLeftArrow.disabled = swiper.isBeginning;
+  servicesRightArrow.disabled = swiper.isEnd;
 }
-
-updateServicesArrows();
 
 servicesDots.forEach((dot, index) => {
   dot.addEventListener('click', () => {
@@ -74,4 +74,4 @@ servicesRightArrow.addEventListener('click', () => {
   servicesSwiper.slideNext();
 });
 
-// observeSwiperAutoplay(servicesSwiper, servicesSwiperEl);
+observeSwiperAutoplay(servicesSwiper, servicesSwiperEl);

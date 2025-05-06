@@ -1,9 +1,9 @@
 import Swiper from 'swiper';
-// import { Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css/bundle';
-// import { observeSwiperAutoplay } from './observer.js';
+import { observeSwiperAutoplay } from './observer.js';
 
-// Swiper.use([Autoplay]);
+Swiper.use([Autoplay]);
 
 const gallerySwiperEl = document.querySelector('.gallery-swiper-container');
 const galleryDots = document.querySelectorAll('.gallery-dot');
@@ -14,7 +14,7 @@ let gallerySwiper;
 
 gallerySwiper = new Swiper('.gallery-swiper-container', {
   direction: 'horizontal',
-  // loop: true,
+  loop: true,
   grabCursor: true,
   slidesPerView: 1,
   initialSlide: 0,
@@ -28,7 +28,7 @@ gallerySwiper = new Swiper('.gallery-swiper-container', {
   },
   breakpoints: {
     1440: {
-      // loop: false,
+      loop: false,
       spaceBetween: 24,
       initialSlide: 0,
       slidesPerView: 4,
@@ -38,12 +38,14 @@ gallerySwiper = new Swiper('.gallery-swiper-container', {
     init: () => {
       document.querySelector('.gallery-swiper-container').classList.add('show');
     },
-    slideChange: () => {
-      updateGalleryDots(gallerySwiper.realIndex);
-      updateGalleryArrows();
+    slideChange: function () {
+      updateGalleryDots(this.realIndex);
+      updateGalleryArrows(this);
     },
   },
 });
+
+updateGalleryArrows(gallerySwiper);
 
 function updateGalleryDots(index) {
   galleryDots.forEach((dot, i) => {
@@ -51,12 +53,10 @@ function updateGalleryDots(index) {
   });
 }
 
-function updateGalleryArrows() {
-  galleryLeftArrow.disabled = gallerySwiper.isBeginning;
-  galleryRightArrow.disabled = gallerySwiper.isEnd;
+function updateGalleryArrows(swiper) {
+  galleryLeftArrow.disabled = swiper.isBeginning;
+  galleryRightArrow.disabled = swiper.isEnd;
 }
-
-updateGalleryArrows();
 
 galleryDots.forEach((dot, index) => {
   dot.addEventListener('click', () => {
@@ -72,4 +72,4 @@ galleryRightArrow.addEventListener('click', () => {
   gallerySwiper.slideNext();
 });
 
-// observeSwiperAutoplay(gallerySwiper, gallerySwiperEl);
+observeSwiperAutoplay(gallerySwiper, gallerySwiperEl);
