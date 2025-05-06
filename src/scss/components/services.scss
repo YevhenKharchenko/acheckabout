@@ -57,15 +57,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     background: none;
     border: none;
+    border-radius: 100%;
     cursor: pointer;
 
     &:hover {
       border: 1px solid #373330;
-      border-radius: 100%;
-      transform: scale(1.1);
     }
 
     &[disabled] {
@@ -94,7 +93,6 @@
   max-width: 255px;
   margin-left: auto;
   margin-right: auto;
-  // visibility: hidden;
 
   @include media(desktop) {
     max-width: 1440px;
@@ -108,7 +106,6 @@
 .services-slide {
   padding: 0;
   max-width: 255px;
-  // height: 327px !important;
 
   @include media(desktop) {
     padding: 16px;

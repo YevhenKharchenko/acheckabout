@@ -3,6 +3,7 @@ import 'swiper/css/bundle';
 
 const processSwiperEl = document.querySelector('.process-swiper-container');
 const processDots = document.querySelectorAll('.process-dot');
+const processImgWrapper = document.querySelector('.process-img-wrapper');
 
 let processSwiper = null;
 
@@ -23,9 +24,11 @@ function initProcessSwiper() {
     on: {
       init: () => {
         processSwiperEl.classList.add('show');
+        updateProcessTimeline(0);
       },
       slideChange: () => {
         updateProcessDots(processSwiper.realIndex);
+        updateProcessTimeline(processSwiper.realIndex);
       },
     },
   });
@@ -44,6 +47,16 @@ function destroyProcessSwiper() {
     processSwiperEl.classList.remove('show');
     updateProcessDots(0);
   }
+}
+
+function updateProcessTimeline(index) {
+  const totalSlides = processDots.length;
+  // const maxShift = 1110 - window.innerWidth;
+  const maxShift = 800;
+
+  const shift = Math.min(maxShift, (index / (totalSlides - 1)) * maxShift);
+
+  processImgWrapper.style.transform = `translateX(-${shift}px)`;
 }
 
 function handleResize() {

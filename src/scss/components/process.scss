@@ -68,7 +68,6 @@
   max-width: 255px;
   margin-left: auto;
   margin-right: auto;
-  // visibility: hidden;
 
   @include media(desktop) {
     max-width: 856px;
@@ -166,6 +165,8 @@
   margin-top: 10px;
   width: 1110px;
   padding-left: 47px;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
 
   @include media(desktop) {
     margin-top: 0;
